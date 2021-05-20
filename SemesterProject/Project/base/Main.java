@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Binary_Search_Tree bt = new Binary_Search_Tree();
 
-        // tree
+        // making my binary search tree
         bt.add(6);
         bt.add(4);
         bt.add(8);
@@ -14,12 +14,13 @@ public class Main {
         bt.add(7);
         bt.add(9);
         bt.find(10);
+        bt.find(6);
 
         System.out.println("This prints the root value");
         System.out.println(bt.root.value);
 
         System.out.println("This prints the height of the tree");
-        System.out.println(bt.maxDepth(bt.root));
+        System.out.println(bt.Height(bt.root));
 
 
         System.out.println("This prints the smallest root");

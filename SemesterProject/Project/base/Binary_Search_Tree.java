@@ -14,7 +14,6 @@ public class Binary_Search_Tree {
         } else if (value > current.value) {
             current.right = addRecursive(current.right, value);
         } else {
-            // value already exists
             return current;
         }
 
@@ -46,102 +45,92 @@ public class Binary_Search_Tree {
         findRecursive(root,value);
     }
 
-    public int maxDepth(Node node)
+    // Finding the height of the tree
+    public int Height(Node node)
     {
         if (node == null)
             return 0;
         else
         {
-            /* compute the depth of each subtree */
-            int lDepth = maxDepth(node.left);
-            int rDepth = maxDepth(node.right);
+            int lheight = Height(node.left);
+            int rheight = Height(node.right);
 
-            /* use the larger one */
-            if (lDepth > rDepth)
-                return (lDepth + 1);
+            if (lheight > rheight)
+                return (lheight + 1);
             else
-                return (rDepth + 1);
+                return (rheight + 1);
         }
     }
+    // Finding the smallest element in the tree
     public int smallest(Node node){
         Node current = node;
 
-        /* loop down to find the leftmost leaf */
+
         while (current.left != null) {
             current = current.left;
         }
         return (current.value);
     }
+    // Finding the largest element in the tree
     public int largest(Node node){
         Node current = node;
 
-        /* loop down to find the leftmost leaf */
         while (current.right != null) {
             current = current.right;
         }
         return (current.value);
     }
-    public Node Nth(Node root, int k)
+    // Finding the Nth largest element in the tree
+    public Node Nth(Node root, int n)
     {
-        Node curr = root;
-        Node Klargest = null;
+        Node current = root;
+        Node Nlargest = null;
 
-        // count variable to keep count of visited Nodes
         int count = 0;
 
-        while (curr != null)
+        while (current != null)
         {
-            // if right child is NULL
-            if (curr.right == null)
+            if (current.right == null)
             {
 
-                // first increment count and check if count = k
-                if (++count == k)
-                    Klargest = curr;
+                if (++count == n)
+                    Nlargest = current;
 
-                // otherwise move to the left child
-                curr = curr.left;
+                current = current.left;
             }
 
             else
             {
 
-                // find inorder successor of current Node
-                Node succ = curr.right;
+                Node successor = current.right;
 
-                while (succ.left != null && succ.left != curr)
-                    succ = succ.left;
+                while (successor.left != null && successor.left != current)
+                    successor = successor.left;
 
-                if (succ.left == null)
+                if (successor.left == null)
                 {
 
-                    // set left child of successor to the
-                    // current Node
-                    succ.left = curr;
+                    successor.left = current;
 
-                    // move current to its right
-                    curr = curr.right;
+                    current = current.right;
                 }
 
-                // restoring the tree back to original binary
-                // search tree removing threaded links
                 else
                 {
 
-                    succ.left = null;
+                    successor.left = null;
 
-                    if (++count == k)
-                        Klargest = curr;
+                    if (++count == n)
+                        Nlargest = current;
 
-                    // move current to its left child
-                    curr = curr.left;
+                    current = current.left;
                 }
             }
         }
-        return Klargest;
+        return Nlargest;
     }
 
-    // This is for deleting a node in the binary search tree
+    // Deleting a node
     public static Node DeleteElements(Node root, int value) {
 
         if (root == null)
@@ -174,7 +163,8 @@ public class Binary_Search_Tree {
         }
         return minimum;
     }
-    // Puts the Binary Search Tree inOrder
+
+    // In order
     public static void InorderTraversal(Node root) {
         if (root != null) {
             InorderTraversal(root.left);
@@ -182,7 +172,7 @@ public class Binary_Search_Tree {
             InorderTraversal(root.right);
         }
     }
-    // Puts the Binary Search Tree in preOrder
+    // Pre order
     public void preOrderTraversal(Node node) {
         if (node != null) {
             System.out.print(node.value + " ");
@@ -191,7 +181,7 @@ public class Binary_Search_Tree {
         }
 
     }
-    // Puts the Binary Search Tree in postOrder
+    // Post order
     public void postOrderTraversal(Node root) {
         if(root !=  null) {
             postOrderTraversal(root.left);
@@ -199,15 +189,15 @@ public class Binary_Search_Tree {
             System.out.print(root.value + " ");
         }
     }
-    // Helps with calculating the height of the Binary Search Tree so we can figure out the levels in Breath First Search.
+
+    // Breadth first search
     public void BreathFirstSearch(){
-        int height = maxDepth(root);
+        int height = Height(root);
         for(int i = 0; i < height; i++){
             BreathFirstSearchTraversal(root, i);
         }
     }
 
-    // Method for breadth first search
     public void BreathFirstSearchTraversal(Node node, int level){
         if(node == null){
             return;
