@@ -148,20 +148,19 @@ tree" and System.out.println(bt.Height(bt.root)) that makes
 sure the function for the height can start at the root.
 
 To print out the smallest node, I have a print statement
-that says "This prints the smallest root" followed by
+that says "This prints the smallest element" followed by
 System.out.println(bt.smallest(bt.root)) that also making
 sure the function starts analyzing the tree at the root.
 
-Next, I have a print statement "This prints the largest root"
+Next, I have a print statement "This prints the largest element"
 and similarly followed by System.out.println(bt.largest(bt.root))
 also making sure the function starts analyzing the tree at the root.
 
 The print statement "This prints the nth largest element, 3"
 states that I want to print the third largest element in the 
 binary search tree. I put System.out.println(bt.Nth(bt.root,3).value) 
-which prints the third root but calling the nth function with 
-(bt.root,3) that calls the third largest node, but I had to
-.value it to get the third largest node's value.
+that calls the nth function according to n being equal to 3 by 
+(bt.root,3). I had to .value it to get the third largest node's value.
 
 For the in order traversal, I started with a print statement
 saying "This prints in order traversal" and then

@@ -23,10 +23,10 @@ public class Main {
         System.out.println(bt.Height(bt.root));
 
 
-        System.out.println("This prints the smallest root");
+        System.out.println("This prints the smallest element");
         System.out.println(bt.smallest(bt.root));
 
-        System.out.println("This prints the largest root");
+        System.out.println("This prints the largest element");
         System.out.println(bt.largest(bt.root));
 
         System.out.println("This prints the nth largest element, 3");
