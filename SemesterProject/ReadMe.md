@@ -1,13 +1,12 @@
 # Semester Project
 
-Hi my name is Justine and I created my Semester Project 
-titled SemesterProject for you Software Development I class 
-with Professor Kippins. 
+Hi my name is Justine McAuliffe and I created my Semester Project 
+titled SemesterProject for Software Development I with Professor Kippins. 
 
 To access my project go to my GitHub and then navigate
 to the main page of my repository, 
 justinemcauliffe/CMPT-220L-903-21S. 
-Open them on your laptop in the texted editor of choice. 
+Open them on your laptop in the texted editor of your choice. 
 
 # Explaining Binary Search Tree
 
@@ -35,7 +34,7 @@ value.
 Starting at the root, I used my find function to search the tree. If the value 
 returns null, it will print "Not in Binary Search Tree." In else there is another
 if statement saying if the value is less than the current value, it will be on the
-left. The else if, it is saying that if the value is greater han the current value,
+left. The else if, is saying that if the value is greater than the current value,
 it will be on the right. Finally, the else says if the value is equal to the current
 value, it will print "In Binary Search Tree."
 
@@ -64,13 +63,13 @@ it will return that value.
 
 #### Finding the Nth largest element in the tree:
 
-First we start out at the root. Then we initialize a count variable to zero. The
+First we start out at the root. Then we initialize the count variable to zero. The
 while loop is set to the current value not equal to null and then has an if 
-statement saying if there are no right child. Within that there is another if 
+statement saying if there are no right children. Within that there is another if 
 statement saying if the count is equal to n then that is the nth largest node,
 printing the current right node. Then the else looks at the left child with 
 another while loop. If the left successor is null then it will print the right 
-child. For the else if the count is equal to n then that is the Nth largest node,
+child. For the else if the count is equal to n then that is the nth largest node,
 printing the current left node. 
 
 
@@ -83,7 +82,7 @@ Then another if statement says if the int value you input is less than the root
 it will delete that element. Then the else if says if the int value is greater
 than the root, it will delete that element. In the else it is checking for any
 disconnects so there is another if statement saying if there is no left child, 
-it will return the right root. Then the else if says if there are not right child,
+it will return the right root. Then the else if says if there is no right child,
 it will return the left root. The next two lines fix the disconnects if there 
 are any.
 
@@ -126,7 +125,7 @@ First the function starts at looking at the height of the tree starting with the
 root. Then there is an if statement for if the node is equal to null, return null.
 Then there is another if statement saying if the level is zero then it will print
 out the node's value. The else uses the BreathFirstSearchTraversal function to 
-look at the left and right of the tree printing out the root then the left and right
+look at the left and right of the tree printing out the root, then the left and right
 child from that and so on. 
 
 
@@ -141,7 +140,7 @@ input the value 10, and it will print "In Binary Search Tree"
 when I input the value 6. 
 
 Next, I have a print statement "This prints the root value"
-and then the found the root by calling the root's value
+and then found the root by calling the root's value
 of binary search tree, which is 6.
 
 Then, I have a print statement "This prints the height of the 
@@ -160,7 +159,7 @@ also making sure the function starts analyzing the tree at the root.
 The print statement "This prints the nth largest element, 3"
 states that I want to print the third largest element in the 
 binary search tree. I put System.out.println(bt.Nth(bt.root,3).value) 
-which prints the third root but calling the Nth function with 
+which prints the third root but calling the nth function with 
 (bt.root,3) that calls the third largest node, but I had to
 .value it to get the third largest node's value.
 
